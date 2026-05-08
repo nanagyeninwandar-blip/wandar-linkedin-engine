@@ -126,11 +126,13 @@ def slack_notify(message):
     webhook = os.environ.get("SLACK_WEBHOOK_URL") or load_config().get("slack_webhook_url", "")
     if not webhook or "YOUR_WEBHOOK" in webhook:
         print("  Slack webhook not configured — skipping notification")
-        return
+        return False
     try:
         requests.post(webhook, json={"text": message}, timeout=10)
+        return True
     except Exception as e:
         print(f"  Slack notification failed: {e}")
+        return False
 
 
 def upload_to_drive(file_path, folder_id=None):
@@ -509,8 +511,9 @@ def notify_success(drive_links):
         f"Posts written, edited by Chief Content Editor, and uploaded to Google Drive.\n\n"
         f"*Files ready:*\n{link_list}"
     )
-    slack_notify(message)
-    print("  Slack notification sent.")
+    sent = slack_notify(message)
+    if sent:
+        print("  Slack notification sent.")
 
 
 # ---------------------------------------------------------------------------
