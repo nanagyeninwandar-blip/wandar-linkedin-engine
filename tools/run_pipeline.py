@@ -128,8 +128,11 @@ def slack_notify(message):
         print("  Slack webhook not configured — skipping notification")
         return False
     try:
-        requests.post(webhook, json={"text": message}, timeout=10)
-        return True
+        resp = requests.post(webhook, json={"text": message}, timeout=10)
+        if resp.status_code == 200:
+            return True
+        print(f"  Slack notification failed: HTTP {resp.status_code} — {resp.text}")
+        return False
     except Exception as e:
         print(f"  Slack notification failed: {e}")
         return False
