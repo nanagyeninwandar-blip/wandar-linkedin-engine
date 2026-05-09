@@ -138,7 +138,7 @@ def slack_notify(message):
         return False
 
 
-def upload_to_drive(file_path, folder_id=None):
+def upload_to_drive(file_path, folder_id=None, subfolder=None):
     if not file_path.exists():
         print(f"  Drive upload skipped (file not found): {file_path}")
         return None
@@ -146,6 +146,8 @@ def upload_to_drive(file_path, folder_id=None):
     cmd = [sys.executable, str(TOOLS / "upload_gdrive.py"), str(file_path)]
     if folder_id:
         cmd += ["--folder-id", folder_id]
+    if subfolder:
+        cmd += ["--subfolder", subfolder]
 
     env = os.environ.copy()
     result = subprocess.run(cmd, capture_output=True, text=True, env=env)
@@ -481,19 +483,24 @@ def upload_outputs(research_md, strategy_md, draft_md, final_md):
     final_folder = os.environ.get("GDRIVE_FINAL_FOLDER_ID") or config.get("gdrive_final_folder_id", "")
 
     drive_links = []
+    week_folder = f"Week of {TODAY}"
 
-    # Pipeline outputs folder — research, strategy, draft
+    # Pipeline outputs folder — research, strategy, draft (inside weekly subfolder)
     print("\nPipeline Outputs folder:")
     for f in [research_md.with_suffix(".xlsx"), strategy_md, draft_md.with_suffix(".docx")]:
-        url = upload_to_drive(f, pipeline_folder if pipeline_folder not in ("", "YOUR_FOLDER_ID_HERE") else None)
+        url = upload_to_drive(
+            f,
+            pipeline_folder if pipeline_folder not in ("", "YOUR_FOLDER_ID_HERE") else None,
+            subfolder=week_folder,
+        )
         if url:
             drive_links.append(url)
 
-    # Ready to Post folder — final only
+    # Ready to Post folder — final only (inside weekly subfolder)
     if final_folder and final_folder not in ("YOUR_READY_TO_POST_FOLDER_ID_HERE", ""):
         print("\nReady to Post folder:")
         final_docx = final_md.with_suffix(".docx")
-        url = upload_to_drive(final_docx, final_folder)
+        url = upload_to_drive(final_docx, final_folder, subfolder=week_folder)
         if url:
             drive_links.append(url)
     else:

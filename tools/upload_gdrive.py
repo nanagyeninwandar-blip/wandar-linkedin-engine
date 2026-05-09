@@ -126,6 +126,27 @@ def _find_existing(service, folder_id, filename):
     return files[0]["id"] if files else None
 
 
+def create_or_find_folder(service, folder_name, parent_id):
+    query = (
+        f"name = '{folder_name}' "
+        f"and '{parent_id}' in parents "
+        f"and mimeType = 'application/vnd.google-apps.folder' "
+        f"and trashed = false"
+    )
+    results = service.files().list(q=query, fields="files(id, name)").execute()
+    files = results.get("files", [])
+    if files:
+        return files[0]["id"]
+    metadata = {
+        "name": folder_name,
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [parent_id],
+    }
+    result = service.files().create(body=metadata, fields="id").execute()
+    print(f"  Created folder: {folder_name}")
+    return result["id"]
+
+
 def upload_file(service, file_path, folder_id):
     from googleapiclient.http import MediaFileUpload
 
@@ -192,6 +213,14 @@ def main():
             folder_id = args[idx + 1]
             args = args[:idx] + args[idx + 2:]
 
+    # Parse --subfolder argument (creates/finds a subfolder and uploads into it)
+    subfolder = None
+    if "--subfolder" in args:
+        idx = args.index("--subfolder")
+        if idx + 1 < len(args):
+            subfolder = args[idx + 1]
+            args = args[:idx] + args[idx + 2:]
+
     if not folder_id:
         folder_id = config.get("google_drive_folder_id", "")
     if not folder_id or folder_id in ("YOUR_FOLDER_ID_HERE", ""):
@@ -214,6 +243,10 @@ def main():
         files = [Path(a) for a in args]
 
     service = _get_service()
+
+    if subfolder:
+        folder_id = create_or_find_folder(service, subfolder, folder_id)
+
     print(f"Uploading {len(files)} file(s) to Google Drive...")
 
     for f in files:
