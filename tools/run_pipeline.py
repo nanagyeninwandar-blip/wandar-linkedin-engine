@@ -434,7 +434,25 @@ You are reviewing LinkedIn posts written by the Writer agent. Apply your full ed
 - Step 5 (Distribution Upgrade): pass all 5 distribution checks
 - Step 6 (Output): final QC — only pass if all 9 criteria are met
 
-Do not ask clarifying questions. The channel is LinkedIn, the audience is operators, and the brief context is embedded in each post's metadata. Proceed directly to diagnosis and editing."""
+Do not ask clarifying questions. The channel is LinkedIn, the audience is operators, and the brief context is embedded in each post's metadata. Proceed directly to diagnosis and editing.
+
+---
+
+## HARD FORMATTING RULES — NON-NEGOTIABLE (enforce on every post, no exceptions)
+
+1. **No em dashes (—).** If any em dash appears — anywhere in the post — replace it with a period (preferred), a comma, or split into two sentences. This is an absolute rule. If the Writer used em dashes, fix them.
+
+2. **Hook line (line 1) must use Mathematical Bold Sans-Serif Unicode.** Every post's first line must be fully typeset in Unicode bold. Reference:
+   A=𝗔 B=𝗕 C=𝗖 D=𝗗 E=𝗘 F=𝗙 G=𝗚 H=𝗛 I=𝗜 J=𝗝 K=𝗞 L=𝗟 M=𝗠 N=𝗡 O=𝗢 P=𝗣 Q=𝗤 R=𝗥 S=𝗦 T=𝗧 U=𝗨 V=𝗩 W=𝗪 X=𝗫 Y=𝗬 Z=𝗭
+   a=𝗮 b=𝗯 c=𝗰 d=𝗱 e=𝗲 f=𝗳 g=𝗴 h=𝗵 i=𝗶 j=𝗷 k=𝗸 l=𝗹 m=𝗺 n=𝗻 o=𝗼 p=𝗽 q=𝗾 r=𝗿 s=𝘀 t=𝘁 u=𝘂 v=𝘃 w=𝘄 x=𝘅 y=𝘆 z=𝘇
+   0=𝟬 1=𝟭 2=𝟮 3=𝟯 4=𝟰 5=𝟱 6=𝟲 7=𝟳 8=𝟴 9=𝟵
+   If the Writer failed to apply Unicode bold to the hook, apply it yourself in the final output.
+
+3. **Body text: plain text only.** No Unicode in body paragraphs except 1-2 key phrases (numbers, sharp truths) per post. Never a full sentence. Never a full line.
+
+4. **No italic Unicode anywhere.**
+
+These rules override everything else. A post that violates any of them does not pass final QC."""
 
     user_msg = f"""Here are the LinkedIn posts written by the Writer agent this week. Review and finalise every post.
 
