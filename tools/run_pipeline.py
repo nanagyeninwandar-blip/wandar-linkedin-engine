@@ -55,6 +55,21 @@ TODAY = date.today().isoformat()
 MODEL = "claude-sonnet-4-6"
 MAX_TOKENS = 8192
 
+# Unicode Mathematical Bold Sans-Serif lookup table (for hook line enforcement)
+_BOLD_MAP = {
+    'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙', 'G': '𝗚',
+    'H': '𝗛', 'I': '𝗜', 'J': '𝗝', 'K': '𝗞', 'L': '𝗟', 'M': '𝗠', 'N': '𝗡',
+    'O': '𝗢', 'P': '𝗣', 'Q': '𝗤', 'R': '𝗥', 'S': '𝗦', 'T': '𝗧', 'U': '𝗨',
+    'V': '𝗩', 'W': '𝗪', 'X': '𝗫', 'Y': '𝗬', 'Z': '𝗭',
+    'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳', 'g': '𝗴',
+    'h': '𝗵', 'i': '𝗶', 'j': '𝗷', 'k': '𝗸', 'l': '𝗹', 'm': '𝗺', 'n': '𝗻',
+    'o': '𝗼', 'p': '𝗽', 'q': '𝗾', 'r': '𝗿', 's': '𝘀', 't': '𝘁', 'u': '𝘂',
+    'v': '𝘃', 'w': '𝘄', 'x': '𝘅', 'y': '𝘆', 'z': '𝘇',
+    '0': '𝟬', '1': '𝟭', '2': '𝟮', '3': '𝟯', '4': '𝟰',
+    '5': '𝟱', '6': '𝟲', '7': '𝟳', '8': '𝟴', '9': '𝟵',
+}
+_META_KEYS = ('PILLAR:', 'BUCKET:', 'FORMAT:', 'VIRALITY', 'BEST DAY:', 'POSTING WINDOW:', 'WHY THIS WORKS:', 'IMAGE DIRECTION:')
+
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -65,6 +80,49 @@ def load_text(path):
     if p.exists():
         return p.read_text(encoding="utf-8")
     return ""
+
+
+def _to_bold(text):
+    return ''.join(_BOLD_MAP.get(c, c) for c in text)
+
+
+def _is_bold(text):
+    return any(ord(c) > 0x1D000 for c in text)
+
+
+def _is_meta_line(line):
+    s = line.strip()
+    return any(s.startswith(k) for k in _META_KEYS)
+
+
+def clean_editor_output(text):
+    """Programmatic safety net: strip em/en dashes and enforce Unicode bold on hook lines."""
+    text = text.replace('—', ' -').replace('–', '-')  # em dash, en dash
+
+    lines = text.split('\n')
+    out = []
+    # State machine: init → meta → body → trailer → init (cycles per post)
+    state = 'init'
+    hook_done = False
+
+    for line in lines:
+        s = line.strip()
+        if s == '---':
+            if state in ('init', 'trailer'):
+                state = 'meta'
+                hook_done = False
+            elif state == 'meta':
+                state = 'body'
+            elif state == 'body':
+                state = 'trailer'
+        elif state == 'body' and not hook_done and s and not _is_meta_line(line):
+            if not _is_bold(s):
+                line = _to_bold(line)
+                print(f"  [clean] Unicode bold applied to hook: {s[:50]}")
+            hook_done = True
+        out.append(line)
+
+    return '\n'.join(out)
 
 
 def write_text(path, content):
@@ -313,6 +371,7 @@ def run_strategist(kb_context, scanner_out):
     print("\n=== Step 3: Strategist ===")
 
     post_history = load_text(ROOT / "posted" / "posted-history.md")
+    loop_hints = load_text(TMP_DIR / "learning-loop-hints.md")
     agent_prompt = load_text(AGENTS_DIR / "02-content-strategist.md")
 
     system = f"""{agent_prompt}
@@ -320,7 +379,13 @@ def run_strategist(kb_context, scanner_out):
 Today's date: {TODAY}
 You have the KB context and Scanner report. Decide this week's content plan."""
 
-    user_msg = f"""## KB Context Package
+    user_msg = f"""## Learning Loop Directives (from last week's performance data)
+
+{loop_hints if loop_hints else "No Learning Loop hints yet — proceed with standard rotation rules."}
+
+---
+
+## KB Context Package
 
 {kb_context}
 
@@ -338,7 +403,7 @@ You have the KB context and Scanner report. Decide this week's content plan."""
 
 ---
 
-Decide this week's content plan. Apply pillar rotation rules and bucket ratio checks.
+Decide this week's content plan. Apply pillar rotation rules and bucket ratio checks. If Learning Loop directives are present above, apply them — they are backed by real performance data and override default rotation where there is a conflict.
 
 For each post brief, determine: bucket, pillar, virality strategy, hook direction, narrative arc, posting day, distribution notes, and target metric.
 
@@ -471,6 +536,7 @@ Output the final, publication-ready version of every post in the same format as 
 Do not include editorial commentary in the final output — clean Markdown posts only."""
 
     editor_out = call_claude(system, user_msg, "Chief Editor")
+    editor_out = clean_editor_output(editor_out)
 
     final_md = OUTPUTS / "final" / f"{TODAY}-week-1-final.md"
     write_text(final_md, editor_out)
@@ -545,6 +611,55 @@ def notify_success(drive_links):
 
 
 # ---------------------------------------------------------------------------
+# Step 11: Update posted history
+# ---------------------------------------------------------------------------
+
+def update_posted_history(editor_out):
+    """Append this week's final posts to posted/posted-history.md for Strategist rotation tracking."""
+    history_path = ROOT / "posted" / "posted-history.md"
+    history_path.parent.mkdir(parents=True, exist_ok=True)
+
+    entries = []
+    state = 'init'
+    pillar = bucket = hook = ""
+
+    for line in editor_out.split('\n'):
+        s = line.strip()
+        if s == '---':
+            if state in ('init', 'trailer'):
+                state = 'meta'
+                pillar = bucket = hook = ""
+            elif state == 'meta':
+                state = 'body'
+            elif state == 'body':
+                state = 'trailer'
+                if hook:
+                    entries.append(f"| {TODAY} | {pillar} | {bucket} | {hook} |")
+        elif state == 'meta':
+            if s.startswith('PILLAR:'):
+                pillar = s.replace('PILLAR:', '').strip()
+            elif s.startswith('BUCKET:'):
+                bucket = s.replace('BUCKET:', '').strip()
+        elif state == 'body' and not hook and s and not _is_meta_line(line):
+            hook = s[:80]  # first content line = hook, truncated for readability
+
+    if not entries:
+        print("  No posts found to record in posted history.")
+        return
+
+    existing = history_path.read_text(encoding="utf-8") if history_path.exists() else ""
+    new_block = "\n" + "\n".join(entries)
+    marker = "<!-- Pipeline appends entries below this line -->"
+    if marker in existing:
+        updated = existing.replace(marker, marker + new_block)
+    else:
+        updated = existing + new_block
+
+    history_path.write_text(updated, encoding="utf-8")
+    print(f"  Posted history updated: {len(entries)} post(s) recorded.")
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -574,6 +689,10 @@ def main():
 
     # Notify success
     notify_success(drive_links)
+
+    # Update posted history for Strategist rotation tracking
+    print("\n=== Step 11: Update Posted History ===")
+    update_posted_history(editor_out)
 
     print(f"\n{'='*60}")
     print(f"Pipeline complete. {TODAY}")

@@ -36,6 +36,9 @@ Read all sections. This is the accumulated wisdom of everything Wandar knows.
 **From post history:** `posted/posted-history.md` (if it exists)
 Check what angles and pillars have been used recently. Enforce rotation rules.
 
+**From the Learning Loop:** `tmp/learning-loop-hints.md` (if it exists)
+Read this first. These are 3 performance-backed directives from last week's Learning Loop analysis. They are based on real save rates, ICP scores, and 12-week trend data. Apply them this week — they override default pillar rotation if there is a conflict. If the file does not exist, proceed with standard rotation rules.
+
 ---
 
 ## Pillar rotation rules

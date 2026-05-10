@@ -2,6 +2,7 @@
   "slack_webhook_url": "YOUR_WEBHOOK_URL_HERE",
   "google_drive_folder_id": "1kmqHM549pSnIEswzryFArk3EbPKV2Oj_",
   "gdrive_final_folder_id": "YOUR_READY_TO_POST_FOLDER_ID_HERE",
+  "gdrive_analytics_sheet_id": "",
   "_instructions": {
     "slack": "Replace slack_webhook_url with your Slack Incoming Webhook URL. Get it at https://api.slack.com/messaging/webhooks",
     "gdrive_folder": "google_drive_folder_id is the pipeline outputs folder (research, strategy, drafts). Already configured.",
