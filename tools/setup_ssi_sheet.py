@@ -142,8 +142,12 @@ def main():
             fields="id",
         ).execute()
         sheet_id = result["id"]
+        media = None  # release file handle before cleanup
     finally:
-        Path(xlsx_path).unlink(missing_ok=True)
+        try:
+            Path(xlsx_path).unlink(missing_ok=True)
+        except PermissionError:
+            pass  # Windows may keep the handle briefly; temp file will be cleaned up by OS
 
     config["gdrive_ssi_sheet_id"] = sheet_id
     CONFIG_PATH.write_text(json.dumps(config, indent=2), encoding="utf-8")
