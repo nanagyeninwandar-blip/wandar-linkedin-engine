@@ -3,10 +3,12 @@
   "google_drive_folder_id": "1kmqHM549pSnIEswzryFArk3EbPKV2Oj_",
   "gdrive_final_folder_id": "YOUR_READY_TO_POST_FOLDER_ID_HERE",
   "gdrive_analytics_sheet_id": "1qOZVBYrPXYEhdqL6-FfI_brotqb9FnL5Xc1n2HoTVd0",
+  "gdrive_ssi_sheet_id": "",
   "_instructions": {
     "slack": "Replace slack_webhook_url with your Slack Incoming Webhook URL. Get it at https://api.slack.com/messaging/webhooks",
     "gdrive_folder": "google_drive_folder_id is the pipeline outputs folder (research, strategy, drafts). Already configured.",
     "gdrive_final_folder": "Replace gdrive_final_folder_id with the ID of your 'Ready to Post' Google Drive folder (the string after /folders/ in the URL). Create this folder in Drive first.",
-    "gdrive_credentials": "Place your OAuth2 credentials JSON (downloaded from Google Cloud Console) at tools/credentials.json \u2014 see tools/upload_gdrive.py header for full setup steps"
+    "gdrive_credentials": "Place your OAuth2 credentials JSON (downloaded from Google Cloud Console) at tools/credentials.json \u2014 see tools/upload_gdrive.py header for full setup steps",
+    "gdrive_ssi_sheet_id": "Auto-populated by running: python tools/setup_ssi_sheet.py"
   }
 }

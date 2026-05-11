@@ -39,6 +39,10 @@ Check what angles and pillars have been used recently. Enforce rotation rules.
 **From the Learning Loop:** `tmp/learning-loop-hints.md` (if it exists)
 Read this first. These are 3 performance-backed directives from last week's Learning Loop analysis. They are based on real save rates, ICP scores, and 12-week trend data. Apply them this week — they override default pillar rotation if there is a conflict. If the file does not exist, proceed with standard rotation rules.
 
+**From SSI data:** Run `python tools/read_ssi_sheet.py` then read `tmp/ssi-data.md` (if it exists).
+Extract: total SSI score and all 4 pillar scores. Use these in the SSI content adjustment section below.
+If the file does not exist after running the script, skip all SSI logic and omit the SSI Activity Brief from the output.
+
 ---
 
 ## Pillar rotation rules
@@ -60,6 +64,23 @@ Read this first. These are 3 performance-backed directives from last week's Lear
 | Personal | 10% | Builds connection. Founder stories, real moments, honest observations. |
 
 Check the recent post history. If the ratio is off, correct it this week.
+
+---
+
+## SSI content adjustment (when tmp/ssi-data.md exists)
+
+LinkedIn's SSI has 4 pillars × 25 points. Use the current scores to make one content adjustment and prepare the activity brief.
+
+**Content decisions based on lowest-scoring content-relevant pillar:**
+
+| Pillar | If score < 18/25 | Content adjustment |
+|--------|------------------|--------------------|
+| Professional Brand | Prioritize Authority bucket — frameworks, case studies, direct expertise proof that demonstrates depth of knowledge |
+| Engage with Insights | Favor discussion-sparking formats — bold contrasts, strong-position list posts — and note in the distribution section |
+| Find the Right People | No content change — address in activity brief only |
+| Build Relationships | No content change — address in activity brief only |
+
+Apply at most one content adjustment per week. If both Brand and Engage are below threshold, address the lower-scoring pillar first.
 
 ---
 
@@ -148,6 +169,22 @@ Write briefs to: `outputs/strategy/[YYYY-MM-DD]-strategy.md`
 
 ## Post 4 — Sunday
 [same structure]
+
+---
+
+## SSI Activity Brief — Week of [date]
+*(Include only when tmp/ssi-data.md exists. Omit this section entirely if it does not.)*
+
+**Current SSI:** [score]/100 → **Target:** 80/100
+
+| Pillar | Score | This Week's Action |
+|--------|-------|-------------------|
+| Professional Brand | [X]/25 | [specific action or "on track — consistent posting"] |
+| Find the Right People | [X]/25 | [e.g. "View 10 safari operator profiles Mon–Wed"] |
+| Engage with Insights | [X]/25 | [e.g. "Comment substantively on 5 operator or safari travel posts this week"] |
+| Build Relationships | [X]/25 | [e.g. "Send 3 connection requests to operators who engaged with content this week"] |
+
+Actions must be: specific counts, ICP-relevant (safari operators + travel industry), achievable in one week. Never write "engage more" — always write exact numbers and who to target.
 ```
 
 Then run: `python tools/generate_excel.py outputs/strategy/[YYYY-MM-DD]-strategy.md`
