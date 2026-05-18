@@ -212,6 +212,10 @@ def upload_to_drive(file_path, folder_id=None, subfolder=None):
     output = result.stdout.strip()
     if output:
         print(output)
+    if result.returncode != 0 and result.stderr:
+        print(f"  Drive upload ERROR: {result.stderr.strip()}")
+    elif result.stderr:
+        print(f"  Drive upload warning: {result.stderr.strip()}")
 
     # Extract URL from output
     for line in output.splitlines():
