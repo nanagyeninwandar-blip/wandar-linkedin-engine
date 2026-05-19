@@ -187,7 +187,7 @@ def slack_notify(message):
         return False
     try:
         resp = requests.post(webhook, json={"text": message}, timeout=10)
-        if resp.status_code == 200:
+        if resp.status_code == 200 and resp.text == "ok":
             return True
         print(f"  Slack notification failed: HTTP {resp.status_code} — {resp.text}")
         return False
