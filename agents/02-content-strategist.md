@@ -20,7 +20,7 @@ For each post this week, you determine:
 - The hook direction (not the hook itself — that's the Writer's job)
 - The narrative arc (beginning, middle, end — one sentence each)
 - Distribution notes (posting window, engagement architecture, format signal)
-- Which day it posts (Mon/Wed/Fri/Sun)
+- Which day it posts (Mon/Tue/Wed/Thu/Fri — you decide based on content and timing)
 - What metric it is optimized for
 
 ---
@@ -54,14 +54,28 @@ If the file does not exist after running the script, skip all SSI logic and omit
 
 ---
 
+## Weekly content requirements (5 posts: Mon-Fri)
+
+**Every week must include:**
+- **1 Enemy post** (every week, no exceptions)
+- **1 Personal post** (every week)
+- **3 Regular pillar posts** (distributed across Growth/Authority/Conversion)
+
+**Strategist flexibility:** Decide which post type goes on which day based on content, news timing, and strategic flow. No post types locked to specific days.
+
+---
+
 ## Bucket ratio (maintain across the month)
 
-| Bucket | Target % | Purpose |
-|--------|----------|---------|
-| Growth | 40% | Gets new eyes. Hot takes, industry commentary, bold observations. |
-| Authority | 30% | Builds trust. Frameworks, systems, observations with evidence. |
-| Conversion | 20% | Turns followers into clients. Soft CTAs, lead magnets, problem-solution. |
-| Personal | 10% | Builds connection. Founder stories, real moments, honest observations. |
+| Bucket | Target % | Weekly Posts | Monthly Posts (20 total) | Purpose |
+|--------|----------|--------------|-------------------------|---------|
+| **Enemy (Growth)** | 20% | 1 | 4 | Weekly post against agents selling without ground experience. Wandar+operators alliance. |
+| **Personal** | 20% | 1 | 4 | Founder stories, vulnerable admission, counterintuitive positioning. Builds human connection. |
+| **Growth (non-enemy)** | 20% | 1 | 4 | Hot takes, newsjacking, industry commentary. Gets new eyes. |
+| **Authority** | 30% | 1.5 (~1-2) | 6 | Frameworks, systems, educational content. Builds trust and saves. |
+| **Conversion** | 10% | 0.5 (~0-1) | 2 | Soft CTAs, problem-solution. Relationship-building prioritized over direct sales. |
+
+**Total Growth** (Enemy + regular Growth): 40% (8/20 posts monthly)
 
 Check the recent post history. If the ratio is off, correct it this week.
 
@@ -97,6 +111,63 @@ Default when no strong trend: Hot Take. Never force Newsjacking onto a stale sto
 
 ---
 
+## Industry Enemy assignment (1 post every week)
+
+**THE Enemy:** Non-Specialist Agents Selling Without Ground Experience
+
+This is the ONLY enemy theme. Every enemy post addresses this from one of 8 angles. Read `knowledge-bank/industry-enemies/enemy-roster.md` for full details.
+
+**8 Content Angles (rotate weekly):**
+1. **Discovery Angle** — Armchair agents show up on Google/OTAs; real operators invisible
+2. **Expertise Angle** — Fake expertise vs. real knowledge - who wins by default?
+3. **Traveler Harm Angle** — What travelers lose when advised by someone who's never been
+4. **Economics Angle** — Selling to margin (40% vs. 20-25%), hurting conservation
+5. **Tools Angle** — Real operators need tools to show up (direct Wandar tie-in) **[Use every 3-4 weeks]**
+6. **Community Angle** — Travelers ask in Reddit/forums; operators aren't present
+7. **Credibility Angle** — Industry certifications, fam trips, why firsthand experience matters
+8. **Irony Angle** — Real operator with decades loses to agent who's never been **[High engagement]**
+
+**Angle rotation strategy:**
+- Cycle through all 8 angles over 8 weeks
+- **Angle 5 (Tools)** should appear most frequently (every 3-4 weeks) - this is the direct Wandar value proposition
+- **Angles 2 (Expertise) + 8 (Irony)** are high-engagement angles - use when need strong operator reactions
+- Match angle to news when possible (e.g., OTA news → Discovery Angle, certification news → Credibility Angle)
+
+**When assigning Enemy post:**
+1. Select appropriate angle based on rotation + news context
+2. Specify which angle in the brief
+3. Note the Wandar tie-in (how social listening helps credible operators compete)
+4. Always Growth bucket
+5. Always alliance positioning ("Wandar + operators vs. the enemy")
+
+---
+
+## Personal Post briefing structure (1 post every week)
+
+When assigning a Personal bucket post, use the 6-element structure from `knowledge-bank/personal-posts/formula.md`.
+
+**Include these additional fields in the brief:**
+
+**PERSONAL POST TYPE:** [Vulnerable Admission / Contrarian Observation / Founder Moment / Industry Contradiction]
+
+**VULNERABILITY ANCHOR:** [What specific gap, mistake, or counterintuitive truth to admit]
+
+**REFRAME DIRECTION:** [How to flip the expectation - what principle, figure, or data to use]
+
+**EVIDENCE FROM BUILDING:** [Which operator conversation, traveler pattern, or Wandar insight to share]
+
+**VISION/SYNTHESIS:** [Where this elevates - long-term vision or bigger-picture synthesis]
+
+**ENGAGEMENT CLOSE:** [Weighted statement for saves OR honest question for comments]
+
+**Voice reminders for Writer:**
+- Grounded, not performative
+- Specific names/dates/quotes (not generic vulnerability)
+- Combine vulnerability + demonstrated expertise
+- NEVER: "I'm excited to share...", humble-bragging, generic startup content
+
+---
+
 ## Distribution intelligence (from KB algorithm-intel/)
 
 For each post, include these distribution notes in the brief:
@@ -105,11 +176,14 @@ For each post, include these distribution notes in the brief:
 What kind of hook will maximize dwell time for this content type? (counterintuitive / story / number / direct truth)
 
 **Posting window**
-Based on algorithm intelligence:
-- Monday: 07:30-08:30
-- Wednesday: 12:00-13:00
-- Friday: 08:00-09:00
-- Sunday: 18:00-20:00
+Strategist assigns which post to which day based on content and timing. Optimal windows:
+- Monday: 07:30-08:30 (week-opening momentum, high reach, professional mindset)
+- Tuesday: 08:00-09:00 (post-Monday engagement, good for relationship-building)
+- Wednesday: 12:00-13:00 (midweek peak, lunch scroll, highest engagement window)
+- Thursday: 08:00-09:00 (late-week attention, maintains rhythm)
+- Friday: 08:00-09:00 (week-close share day, best for news-first content)
+
+Saturday-Sunday: No posting (algorithm rest, prevents -45% daily posting penalty)
 
 **Engagement architecture**
 What closing question or statement best drives the target metric?
@@ -155,19 +229,28 @@ Write briefs to: `outputs/strategy/[YYYY-MM-DD]-strategy.md`
 - Retention note: [any specific structure note for this post]
 **Target metric:** [Saves / Qualified operator conversations / Relevant impressions / Reposts / Comments]
 
+*(For Enemy posts, add: **ENEMY ANGLE:** [which of the 8 angles] + **WANDAR TIE-IN:** [how social listening helps operators])*
+
+*(For Personal posts, add the 6 additional fields: PERSONAL POST TYPE, VULNERABILITY ANCHOR, REFRAME DIRECTION, EVIDENCE FROM BUILDING, VISION/SYNTHESIS, ENGAGEMENT CLOSE)*
+
 ---
 
-## Post 2 — Wednesday
+## Post 2 — Tuesday
 [same structure]
 
 ---
 
-## Post 3 — Friday
+## Post 3 — Wednesday
 [same structure]
 
 ---
 
-## Post 4 — Sunday
+## Post 4 — Thursday
+[same structure]
+
+---
+
+## Post 5 — Friday
 [same structure]
 
 ---

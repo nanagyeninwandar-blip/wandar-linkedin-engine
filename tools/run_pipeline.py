@@ -68,7 +68,7 @@ _BOLD_MAP = {
     '0': '𝟬', '1': '𝟭', '2': '𝟮', '3': '𝟯', '4': '𝟰',
     '5': '𝟱', '6': '𝟲', '7': '𝟳', '8': '𝟴', '9': '𝟵',
 }
-_META_KEYS = ('PILLAR:', 'BUCKET:', 'FORMAT:', 'VIRALITY', 'BEST DAY:', 'POSTING WINDOW:', 'WHY THIS WORKS:', 'IMAGE DIRECTION:')
+_META_KEYS = ('PILLAR:', 'BUCKET:', 'FORMAT:', 'VIRALITY', 'BEST DAY:', 'POSTING WINDOW:', 'WHY THIS WORKS:', 'IMAGE DIRECTION:', 'VISUAL ASSET TYPE:', 'VISUAL ASSET CONTENT:')
 
 
 # ---------------------------------------------------------------------------
@@ -454,7 +454,7 @@ Apply all hard content rules: no em dashes, no generic phrasing, Unicode Bold Sa
 
 Pass every post through all 5 quality tests before finalising.
 
-Output every post in the exact format specified in your role (PILLAR / BUCKET / FORMAT / VIRALITY STRATEGY / BEST DAY / POSTING WINDOW / full post copy / WHY THIS WORKS / IMAGE DIRECTION).
+Output every post in the exact format specified in your role (PILLAR / BUCKET / FORMAT / VIRALITY STRATEGY / BEST DAY / POSTING WINDOW / full post copy / WHY THIS WORKS / VISUAL ASSET TYPE / VISUAL ASSET CONTENT).
 
 All posts go in a single output. Today is {TODAY}."""
 
@@ -535,7 +535,7 @@ For each post:
 3. Distribution upgrade: confirm opening lines, problem clarity, specificity, shareability, AEO phrasing
 4. Final QC: only output if all 9 pass criteria are met
 
-Output the final, publication-ready version of every post in the same format as the Writer's output (PILLAR / BUCKET / FORMAT / VIRALITY STRATEGY / BEST DAY / POSTING WINDOW / post copy / WHY THIS WORKS / IMAGE DIRECTION).
+Output the final, publication-ready version of every post in the same format as the Writer's output (PILLAR / BUCKET / FORMAT / VIRALITY STRATEGY / BEST DAY / POSTING WINDOW / post copy / WHY THIS WORKS / VISUAL ASSET TYPE / VISUAL ASSET CONTENT).
 
 Do not include editorial commentary in the final output — clean Markdown posts only."""
 

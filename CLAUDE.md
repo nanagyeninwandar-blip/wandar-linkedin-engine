@@ -160,27 +160,42 @@ conversion insights
 public demand signals
 Not generic AI commentary or startup content.
 
-Every Linkedin post falls into one of four buckets.
+## Posting Schedule: Mon-Fri (5 posts/week)
 
- Each one has a specific job in the funnel:
+**Weekly content requirements:**
+- 1 Enemy post (every week)
+- 1 Personal post (every week)
+- 3 Regular pillar posts (Growth/Authority/Conversion)
 
- → Growth (40% of posts)
- Gets you discovered by new people. Hot takes, industry commentary, bold observations. This is your top of funnel. Broad enough to attract, sharp enough to stand out.
+Saturday-Sunday: No posting (algorithm rest, prevents daily posting penalty)
 
- → Authority (30% of posts)
- Makes them trust you. Frameworks, systems, case studies, client results. This is where you prove you can actually deliver.
+---
 
- → Conversion (20% of posts)
- Turns followers into clients. Direct offers, lead magnets, clear CTAs. This is where content becomes revenue.
+## Content Buckets
 
- → Personal (10% of posts)
- Makes them remember YOU. Stories, behind the scenes, real moments. People buy from people they feel connected to.
+Every LinkedIn post falls into one of these buckets. Each has a specific job:
 
- Each type feeds the next.
+**→ Enemy (Growth) — 20% of posts (1/week)**
+Weekly post against non-specialist agents selling safaris without ground experience. Positions Wandar + credible operators vs. external threat. 8 different content angles rotate weekly.
 
- Growth posts bring new eyes → Authority posts build trust → Conversion posts drive action → Personal posts keep them engaged.
+**→ Personal — 20% of posts (1/week)**
+Founder vulnerability + demonstrated expertise. Stories, counterintuitive admissions, real moments. Makes them remember YOU and builds human connection.
 
- That's a flywheel, not just a content calendar.
+**→ Growth (non-enemy) — 20% of posts**
+Hot takes, industry commentary, bold observations. Gets you discovered by new people. Top of funnel content that's broad enough to attract, sharp enough to stand out.
+
+**→ Authority — 30% of posts**
+Frameworks, systems, case studies, insights with evidence. Makes them trust you. This is where you prove expertise and earn saves.
+
+**→ Conversion — 10% of posts**
+Soft CTAs, problem-solution positioning. Turns followers into qualified conversations. Relationship-building prioritized over direct sales.
+
+**Total Growth bucket** (Enemy + regular Growth): 40% (8/20 posts monthly)
+
+Each type feeds the next:
+Enemy + Growth posts bring new eyes → Authority posts build trust → Personal posts build connection → Conversion posts drive action.
+
+That's a flywheel, not just a content calendar.
 
 
 Here are 4  posts strategy to use for consistent virality:

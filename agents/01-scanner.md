@@ -128,14 +128,30 @@ Score each qualifying signal on three dimensions (1-10 each):
 
 | Dimension | What it measures |
 |-----------|-----------------|
-| Freshness | How recent and actively discussed is this? (7 days = 10, 30 days = 5, older = discard) |
-| Operator Relevance | How directly does this connect to safari operator pain points or traveler behavior? |
-| Angle Potential | Does Wandar have a specific, insider perspective on this that nobody else can offer? |
+| **Freshness** | How recent and actively discussed is this? (0-48h = 10, 3-7 days = 8, 8-14 days = 6, 15-30 days = 4, 30+ days = discard) |
+| **Operator Relevance** | How directly does this connect to safari operator pain points or traveler behavior? |
+| **Angle Potential** | Does Wandar have a specific, insider perspective on this that nobody else can offer? |
 
-**Final score = average of three dimensions**
+**Base score = average of three dimensions**
 
-Signals scoring 8+ on Relevance: flag for Slack hot take alert.
-Signals scoring below 5 overall: discard.
+### News Weight Bonus (add to base score)
+
+If signal comes from a credible news source, add bonus points:
+
+| Source Tier | Bonus | Examples |
+|-------------|-------|----------|
+| **Tier 1** | +2 | Skift, PhocusWire, Reuters, BBC Travel, African Geographic, Condé Nast Traveler |
+| **Tier 2** | +1 | TourismUpdate, SafariBookings, Travel and Tour World, regional safari publications |
+| **Tier 3** | +0 | Industry blogs, operator announcements |
+| **None** | +0 | Social/forum signals only (no news source) |
+
+**Industry announcements** (brand entering safari, funding, acquisition): +2 bonus regardless of source tier
+
+**Final score = base score + news bonus** (max 12)
+
+**Filtering:**
+- Signals scoring 8+ overall: flag for Slack hot take alert
+- Signals scoring below 5 overall: discard
 
 ---
 
@@ -162,11 +178,11 @@ Write findings to: `outputs/research/[YYYY-MM-DD]-research.md`
 
 ## Qualified signals
 
-| Platform | Signal / Verbatim Quote | Virality Type | Pillar | Score (1-10) | Recommended Angle |
-|----------|------------------------|---------------|--------|--------------|-------------------|
-| X | [exact quote or summary] | Newsjacking | 1 | 8.5 | [specific angle Wandar can own] |
-| Reddit | [exact quote or summary] | Hot Take | 3 | 7.0 | [angle] |
-| ...      | ...                    | ...           | ...    | ...          | ...               |
+| Platform | Signal / Verbatim Quote | Virality Type | Pillar | Base Score | News Bonus | Final Score | News Credibility | Recommended Angle |
+|----------|------------------------|---------------|--------|------------|------------|-------------|------------------|-------------------|
+| X | [exact quote or summary] | Newsjacking | 1 | 6.5 | +2 (Tier 1) | 8.5 | Tier 1 (Skift) | [specific angle Wandar can own] |
+| Reddit | [exact quote or summary] | Hot Take | 3 | 7.0 | +0 (None) | 7.0 | None | [angle] |
+| ...      | ...                    | ...           | ...    | ...        | ...        | ...         | ...              | ...               |
 
 ## Hot take alerts (score 8+ on relevance)
 [List any signals that triggered a Slack alert]

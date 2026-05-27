@@ -110,6 +110,80 @@ Never end with: "Follow me for more!", "Like and share!", "Drop a comment below!
 
 ---
 
+## Personal Post structure (when brief assigns Personal bucket)
+
+Follow the 6-element viral formula from `knowledge-bank/personal-posts/formula.md`:
+
+**Element 1: Vulnerable Hook (Line 1, Unicode bold)**
+- Admit something counterintuitive, uncomfortable, or contrary to conventional wisdom
+- Be specific, not generic ("I've never been on safari" > "Building a startup is hard")
+- Examples: "I get asked: 'Have you been on safari?' The answer is no." OR "Most conversations about AI swing to extremes. Both miss the contradiction."
+
+**Element 2: Specific Admission (Lines 2-4)**
+- Name the gap, mistake, or counterintuitive truth with specific details
+- Use real numbers, dates, verbatim quotes from questions people ask
+- Acknowledge conventional wisdom before rejecting it
+
+**Element 3: Counterintuitive Reframe (Lines 5-8)**
+- Flip the expectation - show why the gap doesn't matter or matters differently
+- Reference credible figures (Gates/Jobs/Bezos) or data
+- Reframe structure: "But here's what I've learned..." then state the principle
+
+**Element 4: Evidence from Building (Lines 9-12)**
+- Share operator conversations, traveler patterns, or Wandar insights
+- Demonstrate expertise earned through building, not theory
+- Safari-specific details (seasonality, wildlife behavior, guide observations)
+
+**Element 5: Long-Term Vision / Synthesis (Lines 13-15)**
+- Elevate to bigger picture - where this is going, why it matters
+- Industry focus, not Wandar product focus
+- Grounded optimism (not manufactured excitement)
+
+**Element 6: Engagement Close**
+- Weighted statement (for saves): quotable synthesis readers bookmark
+- OR honest question (for comments): real curiosity, not engagement bait
+
+**Voice for Personal posts:**
+- Grounded, not performative
+- Honest about gaps and mistakes
+- Specific (names, dates, numbers, verbatim quotes)
+- NEVER: "I'm excited to share...", humble-bragging, generic vulnerability
+
+---
+
+## Industry Enemy post structure (when brief assigns Enemy angle)
+
+Follow the "Us vs. Them" format from `knowledge-bank/industry-enemies/enemy-roster.md`:
+
+**THE Enemy:** Non-Specialist Agents Selling Without Ground Experience
+
+**Structure:**
+1. **Hook** — Name the enemy directly (armchair agents, generalists without Africa experience)
+2. **Enemy description** — What they do, how they harm travelers/operators/industry
+3. **Operator alliance** — "We" language - Wandar + credible operators vs. the enemy
+4. **The Wandar tie-in (subtle)** — How social listening/visibility helps credible operators compete
+5. **Call to operator action** — How credible operators can push back (not a Wandar pitch)
+
+**8 Content Angles** (Strategist specifies which):
+1. Discovery — Real operators invisible on Google/OTAs
+2. Expertise — Fake expertise wins by default when real expertise doesn't show up
+3. Traveler Harm — What travelers lose from inexperienced advice
+4. Economics — 40% margin hurts conservation/community projects
+5. Tools — Real operators need tools to show up (direct Wandar positioning)
+6. Community — Travelers ask in forums; operators aren't present
+7. Credibility — Certifications, fam trips, why firsthand experience matters
+8. Irony — Decades of experience loses to zero experience
+
+**Voice for Enemy posts:**
+- Alliance positioning (Wandar fights WITH operators, not above them)
+- Righteous anger at external bad actors (not frustration at operational challenges)
+- Specific examples (agent who's "been to Kenya once", 40% margin vs. 20-25%)
+- Tie back to why knowledgeable operators must have tools to find leads and share real safari knowledge
+
+**Critical:** Use "we" language. Wandar is in the fight alongside operators, not selling to them.
+
+---
+
 ## 5-test quality bar (mandatory before finalizing)
 
 Pass every post through all 5 tests. If any fails, rewrite.
@@ -132,7 +206,7 @@ PILLAR: [pillar name]
 BUCKET: [Growth / Authority / Conversion / Personal]
 FORMAT: [insight / story / list / contrast / framework]
 VIRALITY STRATEGY: [Brandjacking / Namejacking / Newsjacking / Hot Take]
-BEST DAY: [Monday / Wednesday / Friday / Sunday]
+BEST DAY: [Monday / Tuesday / Wednesday / Thursday / Friday]
 POSTING WINDOW: [time]
 ---
 
@@ -140,11 +214,22 @@ POSTING WINDOW: [time]
 
 ---
 WHY THIS WORKS: [2-3 sentences on the strategic thinking behind this post]
-IMAGE DIRECTION: [one sentence — specific real moment, not stock photo energy. Example: "A camp manager at a laptop in an open-air office, looking at an incoming message on their phone."]
+
+VISUAL ASSET TYPE: [Carousel / Poster / Text Highlight]
+
+VISUAL ASSET CONTENT:
+[ChatGPT Visual GPT prompt — stop-scroll highlights extracted from post, NOT full post copy]
+[Use templates from knowledge-bank/visual-assets/asset-taxonomy.md]
+
+**Default by bucket:**
+- Growth/Enemy: Poster OR Carousel (depending on if list/framework format)
+- Authority: Carousel (framework/list format preferred)
+- Conversion: Text Highlight (cleanest for CTA)
+- Personal: Text Highlight (authenticity over production)
 ---
 ```
 
-Write all 4 posts to: `outputs/drafts/[YYYY-MM-DD]-week-[N].md`
+Write all 5 posts to: `outputs/drafts/[YYYY-MM-DD]-week-[N].md`
 Then run: `python tools/generate_word.py outputs/drafts/[YYYY-MM-DD]-week-[N].md`
 
 ---

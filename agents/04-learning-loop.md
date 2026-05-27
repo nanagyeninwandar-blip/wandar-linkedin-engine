@@ -35,9 +35,14 @@ python tools/read_analytics_sheet.py
 ## Analytics input schema
 
 ### Google Sheet (primary)
-Columns: Week | Date | Post Hook | Impressions | Saves | Reposts | Comments | Operator Comments | DMs Triggered | Pillar | Bucket | Format
+Columns: Week | Date | Post Hook | Impressions | Saves | Reposts | Comments | Operator Comments | DMs Triggered | Pillar | Bucket | Format | Personal Post Type | Enemy Angle | Visual Asset Type
 
-Cross-reference with `outputs/drafts/` files to match hook text to: hook type, virality strategy, and posting window.
+**New columns (May 2026 upgrade):**
+- **Personal Post Type:** (if Bucket = Personal) Vulnerable Admission / Contrarian Observation / Founder Moment / Industry Contradiction
+- **Enemy Angle:** (if Bucket = Enemy/Growth with enemy content) 1-8 (Discovery, Expertise, Traveler Harm, Economics, Tools, Community, Credibility, Irony)
+- **Visual Asset Type:** Carousel / Poster / Text Highlight
+
+Cross-reference with `outputs/drafts/` files to match hook text to: hook type, virality strategy, posting window, and new metadata fields.
 
 ### LinkedIn CSV (optional supplement)
 LinkedIn's creator analytics export includes: date, impressions, clicks, reactions, comments, reposts, saves. Use to supplement or validate the sheet data if both are present.
@@ -87,6 +92,62 @@ Hook × Pillar: [hook type] on [pillar] — save rate [X/1K] — [date]
 - Insight vs. story vs. list vs. framework vs. contrast
 - Which format drives the highest save rate?
 - Which format drives the highest ICP score?
+
+### Personal Post performance (NEW - track weekly)
+For each Personal bucket post, track:
+- **Vulnerability type** (Vulnerable Admission / Contrarian Observation / Founder Moment / Industry Contradiction)
+- **ICP score** (DMs + operator engagement)
+- **Save rate** (personal posts should drive saves from quotable reframes)
+- **Comment quality** (founders/operators sharing their own experiences)
+
+**Analysis questions:**
+- Which vulnerability type drives highest saves?
+- Which type triggers most operator DMs?
+- Which reframes resonate most (compare Element 3 across posts)?
+- Are personal posts hitting the Vulnerability + Expertise formula?
+
+**Record winning patterns:**
+- Best-performing vulnerability anchor (what gap/mistake was admitted)
+- Best-performing reframe (what principle/figure was used)
+- Evidence type that resonated (operator conversations vs. traveler patterns)
+
+### Industry Enemy Post performance (NEW - track weekly)
+For each Enemy post (1/week), track:
+- **Enemy angle used** (1-8 from the rotation)
+- **Operator reposts** (target: ≥3 per post)
+- **Operator comments** (target: ≥5 substantive)
+- **Saves from operators** (target: ≥10)
+- **DMs triggered** (target: ≥1)
+- **"Finally someone said it" reactions** (note in comments)
+
+**Analysis questions:**
+- Which enemy angle drives highest operator engagement?
+- **Angle 5 (Tools)** performance vs. other angles (this should appear every 3-4 weeks)
+- **Angles 2 (Expertise) + 8 (Irony)** performance (high-engagement angles)
+- Does the Wandar tie-in feel natural or forced? (read comments for clues)
+
+**Record winning patterns:**
+- Best-performing angle (by operator reposts + saves)
+- Hook formats that work for enemy posts
+- Best day/time for enemy posts (if pattern emerges)
+
+### Visual Asset Type performance (NEW - track weekly)
+For each post with visual asset, track:
+- **Asset type** (Carousel / Poster / Text Highlight)
+- **Engagement rate vs. text-only baseline**
+- **Dwell time** (if LinkedIn analytics available)
+- **Saves** (visual quality impacts save behavior)
+
+**Analysis questions:**
+- Do carousels outperform text-only for Authority posts? (expected: yes, 21.77% vs. 4%)
+- Do posters outperform text-only for Growth/Enemy posts?
+- Are personal posts better as text-only? (authenticity vs. production value)
+- Optimal slide count for carousels (5 vs. 8 vs. 10 slides)
+
+**Record winning patterns:**
+- Carousel structures that drive highest saves
+- When text-only outperforms visuals (update defaults if pattern emerges)
+- Visual GPT prompt quality (did it generate usable assets on first try?)
 
 ### Posting time performance
 - Does the recommended window hold? Is any day consistently outperforming?
