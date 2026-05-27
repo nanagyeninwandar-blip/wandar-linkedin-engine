@@ -114,10 +114,16 @@ Never end with: "Follow me for more!", "Like and share!", "Drop a comment below!
 
 Follow the 6-element viral formula from `knowledge-bank/personal-posts/formula.md`:
 
+**CRITICAL HOOK VARIETY RULE:**
+NEVER reuse the "Have you been on safari?" hook or any previously used opening line. Each personal post must have a unique, fresh opening that follows the vulnerability type PATTERN but uses different content. Consult the KB for diverse hook patterns, not copy-paste examples.
+
 **Element 1: Vulnerable Hook (Line 1, Unicode bold)**
-- Admit something counterintuitive, uncomfortable, or contrary to conventional wisdom
-- Be specific, not generic ("I've never been on safari" > "Building a startup is hard")
-- Examples: "I get asked: 'Have you been on safari?' The answer is no." OR "Most conversations about AI swing to extremes. Both miss the contradiction."
+- Construction formula: [Question people ask] → [Unexpected answer] OR [Common belief] → [My contradiction]
+- Vulnerable Admission pattern: "I get asked X repeatedly. My answer: Y" (where X and Y are UNIQUE to this post)
+- Contrarian Observation pattern: "Most conversations about X miss the real Z"
+- Founder Moment pattern: "Something I got wrong early on: [specific mistake]"
+- Industry Contradiction pattern: "Here's what makes no sense about X"
+- Be specific, not generic - each hook must be fresh and unrepeated
 
 **Element 2: Specific Admission (Lines 2-4)**
 - Name the gap, mistake, or counterintuitive truth with specific details
@@ -218,8 +224,14 @@ WHY THIS WORKS: [2-3 sentences on the strategic thinking behind this post]
 VISUAL ASSET TYPE: [Carousel / Poster / Text Highlight]
 
 VISUAL ASSET CONTENT:
-[ChatGPT Visual GPT prompt — stop-scroll highlights extracted from post, NOT full post copy]
-[Use templates from knowledge-bank/visual-assets/asset-taxonomy.md]
+**Rules:**
+- Include ONLY the content to visualize: quotes, key points, data, slide text
+- NO color codes, font specifications, dimensions, logo placement, backgrounds, or design instructions
+- ChatGPT Visual GPT already has Wandar's design system configured
+- Example (Text Highlight): "Quote text here" — attribution
+- Example (Carousel): Slide 1: "Hook text" / Slide 2: "Point one" / Slide 3: "Point two"
+- Example (Poster): "Single stat or quote to highlight"
+[Use content-only templates from knowledge-bank/visual-assets/asset-taxonomy.md]
 
 **Default by bucket:**
 - Growth/Enemy: Poster OR Carousel (depending on if list/framework format)

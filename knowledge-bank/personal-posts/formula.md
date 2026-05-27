@@ -29,11 +29,11 @@ Personal posts represent 20% of Wandar's LinkedIn content (1 post/week). They bu
 - Must be specific, not generic vulnerability
 - Creates cognitive dissonance ("Wait, that doesn't match what I expected")
 
-**Hook types:**
-1. **Vulnerable admission:** "I get asked: 'Have you been on safari?' The answer is no."
-2. **Contrarian positioning:** "Most conversations about AI swing to extremes. It will replace everyone. Or it will change nothing. Both miss the contradiction."
-3. **Honest gap:** "I built Wandar without being a travel advisor. Most startup advice would say that's a mistake."
-4. **Counterintuitive truth:** "The best founders in my industry weren't industry insiders. They were fanatics."
+**Hook patterns (never copy exact wording - use the PATTERN):**
+1. **Vulnerable admission pattern:** [Question people ask] → [Vulnerable answer]
+2. **Contrarian positioning pattern:** [Common belief] → [Reject both extremes] → [Nuanced truth]
+3. **Honest gap pattern:** [What you lack] → [Why conventional wisdom says that's wrong] → [Why it's not]
+4. **Counterintuitive truth pattern:** [Unexpected principle] → [Why it contradicts expectations]
 
 **Research backing:**
 - Vulnerable hooks create scroll-stop ([Hyperclapper 2026](https://www.hyperclapper.com/blog-posts/how-to-go-viral-on-linkedin-algorithm-guide-for-2026))
@@ -44,9 +44,24 @@ Personal posts represent 20% of Wandar's LinkedIn content (1 post/week). They bu
 - Honest, not humble-bragging ("The answer is NO" > "I almost gave up but then...")
 - Grounded in founder reality, not manufactured for content
 
-**Examples from founder:**
-- ✅ "I get these questions a lot. 'Why African safari?' 'Have you ever been on safari before?' And honestly, the answer to most of them is NO!"
-- ✅ "Most conversations about AI swing to extremes. It will replace everyone. Or it will change nothing."
+**PATTERN (not specific copy to reuse):**
+- Line 1: [Question you're asked frequently] + [Unexpected/vulnerable answer]
+- Lines 2-4: [List 2-3 specific gaps/lacks] that contradict conventional wisdom
+- Lines 5-8: [Reframe] — why the gap doesn't matter or matters differently
+
+**CONSTRUCTION FORMULA:**
+1. Open with a question people ask (or questions plural)
+2. Answer with vulnerability (admission of gap/lack)
+3. Specify what you DON'T have (experience, credentials, relationships)
+4. Flip expectation with counterintuitive reframe
+5. Ground in building evidence (what you learned by doing)
+
+**DIVERSE HOOK EXAMPLES (rotate, never repeat):**
+- ✅ "People ask if I've raised VC funding. I haven't."
+- ✅ "Do you have a safari background? No."
+- ✅ "Have you worked in travel before? Never."
+- ✅ "Are you based in Africa? I'm not."
+- ✅ "Most conversations about AI swing to extremes. Both miss the real contradiction."
 - ❌ "I'm excited to share my entrepreneurship journey..." (generic, not vulnerable)
 - ❌ "Building Wandar has been the hardest thing I've ever done..." (performative struggle)
 

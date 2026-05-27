@@ -26,11 +26,10 @@ Visual assets are specified in every post but must be optimized for user's custo
 
 **Engagement data:** 21.77% (highest performing format)
 
-**Optimal specs:**
+**Content specs:**
 - 5-10 slides maximum
-- 1080x1920px per slide (portrait orientation for LinkedIn)
 - Max 12 words per slide
-- High contrast, minimalist design
+- Content only (no design specifications)
 
 **Best for buckets:**
 - Authority (frameworks, lists)
@@ -53,11 +52,10 @@ Visual assets are specified in every post but must be optimized for user's custo
 
 **Engagement data:** 4.85%
 
-**Optimal specs:**
-- 1200x1200px (square format)
-- Bold typography
+**Content specs:**
 - Max 15-20 words
-- Safari brand colors
+- Single quote or stat
+- Content only (no design specifications)
 
 **Best for buckets:**
 - Growth (hot takes, sharp hooks)
@@ -91,333 +89,154 @@ Visual assets are specified in every post but must be optimized for user's custo
 
 ---
 
-## Wandar Brand Visual Style
+**IMPORTANT: Content-Only Specifications**
 
-**Color Palette:**
-- Safari green: `#2D5016`
-- Sand beige: `#D4C5B9`
-- Deep charcoal: `#2C2C2C`
-- White: `#FFFFFF`
+ChatGPT Visual GPT already has Wandar's design system configured (colors, fonts, dimensions, logo placement).
 
-**Typography guidelines:**
-- Headlines: Bold, sans-serif (Montserrat Bold or similar)
-- Body: Clean, readable, minimum 18pt
-- High contrast (dark on light or light on dark, never mid-tone on mid-tone)
-
-**Visual principles:**
-- Minimalist (white space is strategic)
-- Clean (no stock safari clichés unless directly relevant)
-- Professional (not corporate, not startup-y)
-- Safari-grounded (earth tones, not tech blues)
+**For all visual asset prompts:**
+- Include ONLY the content to visualize (quotes, key points, data, slide text)
+- NO color codes, font specifications, dimensions, backgrounds, or design instructions
+- Format: list the content for each slide/element
 
 ---
 
-## ChatGPT Visual GPT Prompt Templates
+## Content-Only Templates for Visual Assets
 
-### Template A: PDF Carousel (Enemy Post Example)
+**CRITICAL:** ChatGPT Visual GPT already has Wandar's design system (colors, fonts, dimensions, logo). Include ONLY content below.
 
-```
-Create a PDF carousel for LinkedIn with the following specifications:
+### Template A: Carousel (Enemy/Growth Post)
 
-**Visual Style:** Minimalist, clean, professional
-**Color Palette:** Safari green #2D5016, sand beige #D4C5B9, deep charcoal #2C2C2C, white #FFFFFF
-**Dimensions:** 1080x1920px per slide (portrait orientation)
+VISUAL ASSET TYPE: Carousel
 
-**Slide-by-slide breakdown:**
+VISUAL ASSET CONTENT:
+Slide 1: [Hook - main point]
+Slide 2: [Problem statement]
+Slide 3: [Evidence/data point 1]
+Slide 4: [Evidence/data point 2]
+Slide 5: [Evidence/data point 3]
+Slide 6: [Consequence]
+Slide 7: [Solution/call to action]
 
-Slide 1 (Cover):
-- Text: "Why armchair agents show up. And real operators don't."
-- Visual: Simple icon of a laptop vs. a safari jeep
-- Background: Safari green with white text
-
-Slide 2:
-- Text: "A traveler googles 'Kenya safari.'"
-- Visual: Google search bar icon
-- Background: White with charcoal text
-
-Slide 3:
-- Text: "The first result: an agent who's never been to Kenya."
-- Visual: Location pin icon with X through it
-- Background: Sand beige with charcoal text
-
-Slide 4:
-- Text: "The operator with 20 years in the Serengeti? Not on page 1."
-- Visual: Simple tent icon faded in background
-- Background: White with charcoal text
-
-Slide 5:
-- Text: "Google doesn't care about ground experience. It cares about SEO."
-- Visual: Trophy icon
-- Background: Safari green with white text
-
-Slide 6:
-- Text: "Real operators need visibility BEFORE travelers Google."
-- Visual: Magnifying glass icon
-- Background: White with charcoal text
-
-Slide 7:
-- Text: "Discovery happens in communities. But operators aren't there."
-- Visual: Speech bubble icons (conversation)
-- Background: Sand beige with charcoal text
-
-Slide 8:
-- Text: "Social listening gives credible operators tools to show up."
-- Visual: Checkmark icon
-- Background: Safari green with white text
-
-Slide 9:
-- Text: "Because expertise that can't be found doesn't exist."
-- Visual: No icon, just text (weighted statement)
-- Background: Deep charcoal with white text
-
-Slide 10 (CTA):
-- Text: "Follow @nanagyenin for safari operator growth insights"
-- Visual: Small Wandar logo or profile icon
-- Background: White with charcoal text
-
-**Typography:**
-- Headline font: Montserrat Bold, 48pt minimum
-- No more than 12 words per slide
-- High contrast (white on dark or dark on light)
-
-**Visual elements:**
-- Minimalist line icons only (no photos)
-- Consistent icon style across all slides
-- Alternating background colors (safari green → white → sand beige pattern)
-
-**What to avoid:**
-- Stock safari photos
-- Overcrowded slides
-- More than 2 visual elements per slide
-```
+**Example:**
+Slide 1: "Armchair agents selling safaris they've never experienced"
+Slide 2: "Travelers lose: Inexperienced advice leads to mismatched expectations"
+Slide 3: "Operators lose: Real expertise invisible on Google"
+Slide 4: "Conservation loses: 40% margins pull funds from community projects"
+Slide 5: "The gap: Credible operators need tools to show up"
+Slide 6: "Social listening closes this gap"
+Slide 7: "Knowledgeable operators must be where travelers ask questions"
 
 ---
 
-### Template B: PDF Carousel (Authority/Framework Post Example)
+### Template B: Carousel (Authority/Framework Post)
 
-```
-Create a PDF carousel for LinkedIn with the following specifications:
+VISUAL ASSET TYPE: Carousel
 
-**Visual Style:** Minimalist, educational, professional
-**Color Palette:** Safari green #2D5016, sand beige #D4C5B9, deep charcoal #2C2C2C, white #FFFFFF
-**Dimensions:** 1080x1920px per slide (portrait orientation)
+VISUAL ASSET CONTENT:
+Slide 1: [Framework title/hook]
+Slide 2-6: [Each framework stage/point - one per slide]
+Slide 7: [Summary/application]
 
-**Slide-by-slide breakdown:**
-
-Slide 1 (Cover):
-- Text: "How safari demand actually forms"
-- Subtext: "5 stages operators miss"
-- Background: Safari green with white text
-
-Slide 2 (Stage 1):
-- Text: "Stage 1: Inspiration"
-- Subtext: "Social media, friends, documentaries"
-- Visual: Small lightbulb icon
-- Background: White with charcoal text
-
-Slide 3 (Stage 2):
-- Text: "Stage 2: Research"
-- Subtext: "Reddit, forums, Google searches"
-- Visual: Magnifying glass icon
-- Background: Sand beige with charcoal text
-
-Slide 4 (Stage 3):
-- Text: "Stage 3: Community Questions"
-- Subtext: "Where travelers ask: 'Is $8K too much for 10 days?'"
-- Visual: Speech bubble icon
-- Background: White with charcoal text
-
-Slide 5 (Stage 4):
-- Text: "Stage 4: Shortlist Formation"
-- Subtext: "3-5 operators identified (before any contact)"
-- Visual: Checklist icon
-- Background: Safari green with white text
-
-Slide 6 (Stage 5):
-- Text: "Stage 5: Operator Contact"
-- Subtext: "Decision already 60% made"
-- Visual: Email/contact icon
-- Background: White with charcoal text
-
-Slide 7 (Key Insight):
-- Text: "Traditional marketing enters at Stage 5."
-- Subtext: "Social listening enters at Stage 3."
-- Visual: Timeline/arrow showing gap
-- Background: Deep charcoal with white text
-
-Slide 8 (Implication):
-- Text: "By the time inquiry arrives, the shortlist is closed."
-- Background: Sand beige with charcoal text
-
-Slide 9 (Call to Action - Operator Question):
-- Text: "If you're an operator: where are you in this timeline?"
-- Background: Safari green with white text
-
-Slide 10 (CTA):
-- Text: "Follow @nanagyenin for safari operator insights"
-- Background: White with charcoal text
-
-**Typography:**
-- Headline: Montserrat Bold, 36-48pt
-- Subtext: Montserrat Regular, 24-28pt
-- Max 12 words headline + 8 words subtext per slide
-
-**Visual elements:**
-- One simple icon per slide
-- Consistent icon set (line-style, not filled)
-- Color-coded stages (optional: progress dots at bottom)
-
-**What to avoid:**
-- Too much text per slide
-- Complex diagrams
-- Photos (icons only for framework posts)
-```
+**Example:**
+Slide 1: "Why safari demand forms publicly before operators see it"
+Slide 2: "Stage 1: Traveler research (Reddit, forums, communities)"
+Slide 3: "Stage 2: Shortlisting (Before contact, based on visibility)"
+Slide 4: "Stage 3: Inquiry (Only to pre-selected operators)"
+Slide 5: "Stage 4: Conversion (Speed + expertise wins)"
+Slide 6: "The gap: Operators enter at Stage 3, miss Stages 1-2"
+Slide 7: "Solution: Visibility where demand forms, not just where it converts"
 
 ---
 
-### Template C: Single Image Poster (Hook Amplification)
+### Template C: Poster (Hook Amplification)
 
-```
-Create a single image poster for LinkedIn with the following specifications:
+VISUAL ASSET TYPE: Poster
 
-**Visual Style:** Bold, minimalist, scroll-stopping
-**Color Palette:** Safari green #2D5016, sand beige #D4C5B9, deep charcoal #2C2C2C, white #FFFFFF
-**Dimensions:** 1200x1200px (square format)
+VISUAL ASSET CONTENT:
+[Single powerful quote or stat from post]
 
-**Content:**
-- Main text: "Expertise that can't be found doesn't exist."
-- Subtext: "At least not to travelers."
-- Background: Deep charcoal #2C2C2C
-- Text color: White #FFFFFF
-
-**Layout:**
-- Main text: Centered, Montserrat Bold, 72pt
-- Subtext: Centered below main, Montserrat Regular Italic, 36pt
-- Generous white space around text
-- Optional: Thin horizontal line separating main text and subtext
-
-**Visual elements:**
-- No icons
-- No photos
-- Pure typography poster
-- Text is the visual
-
-**What to avoid:**
-- Busy backgrounds
-- Multiple colors
-- Decorative elements
-- Safari cliché imagery
-
-**Alternative color scheme (if primary doesn't work):**
-- Background: Safari green #2D5016
-- Text: White #FFFFFF
-```
+**Example:**
+"80% of safari inquiries come after travelers already decided where to go"
 
 ---
 
-### Template D: Single Image Poster (Stat Highlight)
+### Template D: Poster (Stat Highlight)
 
-```
-Create a single image poster for LinkedIn with the following specifications:
+VISUAL ASSET TYPE: Poster
 
-**Visual Style:** Data-focused, clean, credible
-**Color Palette:** Safari green #2D5016, sand beige #D4C5B9, deep charcoal #2C2C2C, white #FFFFFF
-**Dimensions:** 1200x1200px (square format)
+VISUAL ASSET CONTENT:
+[Key number + context]
 
-**Content:**
-- Stat: "90%"
-- Context: "of safari searches start on Google"
-- Insight: "Real operators aren't there."
-- Background: White #FFFFFF
-- Stat color: Safari green #2D5016
-- Text color: Deep charcoal #2C2C2C
-
-**Layout:**
-- Top 40%: Large "90%" in safari green, Montserrat Black, 144pt
-- Middle 30%: "of safari searches start on Google" in charcoal, Montserrat Regular, 36pt
-- Bottom 30%: "Real operators aren't there." in charcoal, Montserrat Bold, 42pt
-
-**Visual elements:**
-- Optional: Subtle Google "G" icon watermark in background (very faded)
-- Optional: Thin horizontal lines separating sections
-- Focus: The stat is the hero
-
-**What to avoid:**
-- Chart/graph (just present the stat cleanly)
-- Multiple stats (one stat per poster)
-- Stock imagery
-```
+**Example:**
+"4-7 days
+The response time gap that loses bookings"
 
 ---
 
-### Template E: Text Highlight (Personal Post - No Image)
+### Template E: Text Highlight (Personal Post)
 
-**When to use this:**
-For personal posts, default to text-only unless visual genuinely adds value.
+VISUAL ASSET TYPE: Text Highlight
 
-**Reasoning:**
-- Authenticity > production value for personal content
-- 360Brew rewards dwell time + substantive engagement, not visual polish
-- Personal posts perform well as text-only (4% baseline is acceptable for Personal bucket)
+VISUAL ASSET CONTENT:
+[Pulled quote from post]
+— [Attribution]
 
-**When to add visual to personal post:**
-- Founder moment post with specific location reference (could use simple map/location visual)
-- Contrarian observation with data backing (stat poster works)
-- Otherwise: skip the visual, let the story carry the post
+**Example:**
+"Proximity to an industry doesn't guarantee you'll see what's broken. Sometimes distance gives you the pattern recognition insiders miss."
+— on building Wandar
+
+**When to use:**
+- Personal posts (default to text-only for authenticity)
+- Quotable insights from personal stories
+- Founder moments with synthesis worth highlighting
 
 ---
 
-## Writer Workflow: Generating Visual Asset Prompts
+## Writer Workflow: Content-Only Visual Assets
 
-**Step 1: Identify post type and bucket**
-- Enemy post → Carousel (8 angles visualization)
-- Authority framework → Carousel (multi-step process)
-- Growth hot take → Poster (hook amplification)
-- Personal story → Text Highlight (no image)
+**Step 1: Identify asset type**
+- Enemy/Growth post → Carousel or Poster
+- Authority framework → Carousel
+- Personal story → Text Highlight (default)
 
-**Step 2: Extract stop-scroll highlights**
-- NOT the full post text
-- Pull 8-10 key phrases/stats/insights from the post
-- Sequence them logically (cover → build → insight → CTA)
+**Step 2: Extract content only**
+- Pull key quotes, stats, or slide points from post
+- NO design specifications (colors, fonts, dimensions)
+- List content in logical sequence
 
-**Step 3: Select template and customize**
-- Copy appropriate template (A, B, C, D, or E)
-- Replace bracketed content with post-specific text
-- Ensure slide text ≤ 12 words each
-
-**Step 4: Include in post metadata**
+**Step 3: Output format**
 ```
 VISUAL ASSET TYPE: [Carousel / Poster / Text Highlight]
 
 VISUAL ASSET CONTENT:
-[Full ChatGPT Visual GPT prompt from template]
+[Content only - quotes, slide text, or stats]
 ```
+
+**Example outputs:**
+- Carousel: Slide 1: "Hook" / Slide 2: "Point" / Slide 3: "Point" / etc.
+- Poster: "Single stat or quote"
+- Text Highlight: "Quote" — attribution
 
 ---
 
-## Quality Checklist for Visual Assets
+## Quality Checklist (Content-Only)
 
 Before including in post output, verify:
 
+**For All Assets:**
+- [ ] Content only (NO colors, fonts, dimensions, logos)
+- [ ] Slide text or quotes extracted from post
+- [ ] Logical flow for carousels (cover → build → CTA)
+- [ ] Text Highlight for personal posts (default)
+
 **For Carousels:**
-- [ ] 5-10 slides (not more, not less)
+- [ ] 5-10 slides listed
 - [ ] Each slide ≤ 12 words
-- [ ] Logical flow (cover → build → CTA)
-- [ ] Wandar brand colors used
-- [ ] Icons specified (not vague "relevant visual")
-- [ ] Final slide has CTA + handle
+- [ ] Content follows post narrative
 
 **For Posters:**
-- [ ] Single clear message (stat, quote, hook)
+- [ ] Single stat or quote
 - [ ] ≤ 20 words total
-- [ ] High contrast (readable from small mobile screen)
-- [ ] Wandar brand colors used
-- [ ] No stock safari imagery unless directly relevant
-
-**For All Assets:**
-- [ ] ChatGPT Visual GPT can execute this prompt (specific, not vague)
-- [ ] Content is stop-scroll highlights, NOT full post copy
-- [ ] Aligns with post bucket (Authority = educational, Growth = sharp, Personal = authentic)
 
 ---
 
