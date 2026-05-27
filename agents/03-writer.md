@@ -135,15 +135,18 @@ NEVER reuse the "Have you been on safari?" hook or any previously used opening l
 - Reference credible figures (Gates/Jobs/Bezos) or data
 - Reframe structure: "But here's what I've learned..." then state the principle
 
-**Element 4: Evidence from Building (Lines 9-12)**
-- Share operator conversations, traveler patterns, or Wandar insights
-- Demonstrate expertise earned through building, not theory
-- Safari-specific details (seasonality, wildlife behavior, guide observations)
+**Element 4: Why This Matters to YOU (Lines 9-12)**
+- Share your conviction, emotional connection, why you care
+- Why you're fanatical about this space (not why you're qualified)
+- Emotional, aspirational, cultural reasons (not analytical insights)
+- NOT: operator conversations, traveler patterns, safari expertise
+- Focus on conviction, not expertise demonstration
 
-**Element 5: Long-Term Vision / Synthesis (Lines 13-15)**
-- Elevate to bigger picture - where this is going, why it matters
-- Industry focus, not Wandar product focus
-- Grounded optimism (not manufactured excitement)
+**Element 5: Macro Trends + Future Vision (Lines 13-15)**
+- Macro trends supporting your vision (tech, culture, economics)
+- What you believe about the future (5-10 year conviction)
+- NOT: "safari deserves better systems for operators" (industry advocacy)
+- Focus on founder conviction, not industry teaching
 
 **Element 6: Engagement Close**
 - Weighted statement (for saves): quotable synthesis readers bookmark
