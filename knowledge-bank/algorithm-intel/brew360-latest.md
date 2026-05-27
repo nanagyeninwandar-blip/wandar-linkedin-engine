@@ -72,6 +72,40 @@ The algorithm reads meaning, not metrics.
 
 ---
 
+## News Content Mechanics
+
+**Claim:** "LinkedIn rewards news and journalist content"
+
+**Reality:** 360Brew does NOT have an explicit "news boost" or "journalist bonus."
+
+**However, news content naturally triggers three high-weight 360Brew signals:**
+
+1. **Dwell time** — Substantive reporting/analysis keeps readers engaged 30+ seconds
+2. **Substantive comments** — News sparks multi-sentence debate (high algorithmic weight)
+3. **Original expertise** — First-party reporting or insider analysis signals original content
+
+**The mechanism:**
+- News posts that provide analysis (not just aggregation) increase dwell time
+- Breaking industry news triggers debate → substantive comments
+- First-to-report or unique angle → original expertise signal
+
+**Strategic implication for Wandar:**
+- News-first content (newsjacking <7 days fresh) can amplify reach IF paired with original safari operator insight
+- Aggregating news without analysis = low value
+- Wandar angle: "Here's the news + why it matters to safari operators" = high value
+
+**Timing windows for news content:**
+- 0-48 hours: Breaking news window (highest freshness score)
+- 3-7 days: Newsjacking window (still fresh, analysis appreciated)
+- 8-14 days: Analysis window (not newsjacking, but depth matters)
+- 15+ days: Evergreen only (news angle expired)
+
+**Sources:**
+- [LinkedIn Algorithm 2026 Explained](https://upgrowth.in/linkedin-algorithm-2026-360brew-update/)
+- [360Brew Algorithm Changes](https://falia.co/en/360brew-linkedins-new-algorithm-explained-2026/)
+
+---
+
 ## Posting frequency and timing
 
 **Frequency:** 2-3 posts per week. Daily posting drops reach by 45%.

@@ -67,7 +67,23 @@ Last algorithm intel refresh: 2026-05-07 (360Brew deployment data — March 2026
 | File | Description | Last updated |
 |------|-------------|--------------|
 | linkedin-algorithm.md | Algorithm intelligence — updated with 360Brew May 2026 signals | 2026-05-07 |
-| brew360-latest.md | 360Brew full intelligence — March 2026 deployment, key signals, format data, posting rules | 2026-05-07 |
+| brew360-latest.md | 360Brew full intelligence — March 2026 deployment, key signals, format data, posting rules, news content mechanics | 2026-05-27 |
+
+### industry-enemies/
+| File | Description | Last updated |
+|------|-------------|--------------|
+| enemy-roster.md | THE enemy: Non-specialist agents selling without ground experience — 8 angles, rotation logic, Wandar tie-ins | 2026-05-27 |
+
+### personal-posts/
+| File | Description | Last updated |
+|------|-------------|--------------|
+| formula.md | 6-element viral personal post structure, voice rules, research validation, founder examples | 2026-05-27 |
+| vulnerability-types.md | 4 vulnerability hook types for personal posts with construction formulas | 2026-05-27 |
+
+### visual-assets/
+| File | Description | Last updated |
+|------|-------------|--------------|
+| asset-taxonomy.md | Asset types (carousel/poster/text-only), ChatGPT Visual GPT prompt templates, brand guidelines | 2026-05-27 |
 
 ---
 
