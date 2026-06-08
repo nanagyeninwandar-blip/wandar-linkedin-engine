@@ -176,8 +176,10 @@ def run_script(script_name, *args):
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.stdout:
         print(result.stdout.strip())
-    if result.returncode != 0 and result.stderr:
-        print(f"  Warning from {script_name}: {result.stderr.strip()}")
+    if result.returncode != 0:
+        error_msg = result.stderr.strip() if result.stderr else "Unknown error"
+        print(f"  ERROR from {script_name}: {error_msg}")
+        raise RuntimeError(f"{script_name} failed: {error_msg}")
 
 
 def slack_notify(message):
@@ -678,29 +680,55 @@ def main():
 
     TMP_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Run all 5 agents
-    kb_context = run_kb_agent()
-    scanner_out, research_md = run_scanner(kb_context)
-    strategy_out, strategy_md = run_strategist(kb_context, scanner_out)
-    writer_out, draft_md = run_writer(kb_context, strategy_out)
-    editor_out, final_md = run_editor(writer_out)
+    try:
+        # Run all 5 agents
+        kb_context = run_kb_agent()
+        scanner_out, research_md = run_scanner(kb_context)
+        strategy_out, strategy_md = run_strategist(kb_context, scanner_out)
+        writer_out, draft_md = run_writer(kb_context, strategy_out)
+        editor_out, final_md = run_editor(writer_out)
 
-    # Generate formatted files
-    generate_outputs(research_md, strategy_md, draft_md, final_md)
+        # Generate formatted files
+        generate_outputs(research_md, strategy_md, draft_md, final_md)
 
-    # Upload to Drive
-    drive_links = upload_outputs(research_md, strategy_md, draft_md, final_md)
+        # Verify files exist before upload
+        required_files = [
+            research_md.with_suffix(".xlsx"),
+            strategy_md,
+            draft_md.with_suffix(".docx"),
+            final_md.with_suffix(".docx")
+        ]
+        missing = [f for f in required_files if not f.exists()]
+        if missing:
+            print("\n⚠️  WARNING: Some output files were not generated:")
+            for f in missing:
+                print(f"  - {f}")
+            print("\nThis indicates a problem in the generation step.")
 
-    # Notify success
-    notify_success(drive_links)
+        # Upload to Drive
+        drive_links = upload_outputs(research_md, strategy_md, draft_md, final_md)
 
-    # Update posted history for Strategist rotation tracking
-    print("\n=== Step 11: Update Posted History ===")
-    update_posted_history(editor_out)
+        # Verify uploads succeeded
+        if not drive_links:
+            print("\n⚠️  WARNING: No files were uploaded to Google Drive")
+            print("Check GDRIVE secrets and folder IDs in GitHub Actions")
 
-    print(f"\n{'='*60}")
-    print(f"Pipeline complete. {TODAY}")
-    print(f"{'='*60}\n")
+        # Notify success
+        notify_success(drive_links)
+
+        # Update posted history for Strategist rotation tracking
+        print("\n=== Step 11: Update Posted History ===")
+        update_posted_history(editor_out)
+
+        print(f"\n{'='*60}")
+        print(f"Pipeline complete. {TODAY}")
+        print(f"{'='*60}\n")
+
+    except Exception as e:
+        print(f"\n❌ PIPELINE FAILED: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
 
 
 if __name__ == "__main__":
