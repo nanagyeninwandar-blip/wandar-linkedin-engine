@@ -142,6 +142,8 @@ def load_config():
 def call_claude(system_prompt, user_message, label=""):
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     print(f"\n[{label}] Calling Claude ({MODEL})...")
+    print(f"[{label}] System prompt: {len(system_prompt)} chars")
+    print(f"[{label}] User message: {len(user_message)} chars")
     response = client.messages.create(
         model=MODEL,
         max_tokens=MAX_TOKENS,
@@ -149,7 +151,8 @@ def call_claude(system_prompt, user_message, label=""):
         messages=[{"role": "user", "content": user_message}],
     )
     text = response.content[0].text
-    print(f"[{label}] Done ({len(text)} chars)")
+    print(f"[{label}] Response: {len(text)} chars")
+    print(f"[{label}] Stop reason: {response.stop_reason}")
     return text
 
 
@@ -555,10 +558,21 @@ Do not include editorial commentary in the final output — clean Markdown posts
 
 def generate_outputs(research_md, strategy_md, draft_md, final_md):
     print("\n=== Step 6-7: Generate Excel + Word ===")
+    print(f"  Input markdown files:")
+    print(f"    research_md: {research_md} (exists: {research_md.exists()})")
+    print(f"    strategy_md: {strategy_md} (exists: {strategy_md.exists()})")
+    print(f"    draft_md: {draft_md} (exists: {draft_md.exists()})")
+    print(f"    final_md: {final_md} (exists: {final_md.exists()})")
+
     run_script("generate_excel.py", str(research_md))
     run_script("generate_excel.py", str(strategy_md))
     run_script("generate_word.py", str(draft_md))
     run_script("generate_word.py", str(final_md))
+
+    print(f"\n  Generated files:")
+    print(f"    {research_md.with_suffix('.xlsx')} (exists: {research_md.with_suffix('.xlsx').exists()})")
+    print(f"    {draft_md.with_suffix('.docx')} (exists: {draft_md.with_suffix('.docx').exists()})")
+    print(f"    {final_md.with_suffix('.docx')} (exists: {final_md.with_suffix('.docx').exists()})")
 
 
 # ---------------------------------------------------------------------------
@@ -572,30 +586,45 @@ def upload_outputs(research_md, strategy_md, draft_md, final_md):
     pipeline_folder = config.get("google_drive_folder_id", "")
     final_folder = os.environ.get("GDRIVE_FINAL_FOLDER_ID") or config.get("gdrive_final_folder_id", "")
 
+    print(f"  Pipeline folder ID: {pipeline_folder}")
+    print(f"  Final folder ID: {final_folder}")
+    print(f"  Week folder name: Week of {TODAY}")
+
     drive_links = []
     week_folder = f"Week of {TODAY}"
 
     # Pipeline outputs folder — research, strategy, draft (inside weekly subfolder)
     print("\nPipeline Outputs folder:")
-    for f in [research_md.with_suffix(".xlsx"), strategy_md, draft_md.with_suffix(".docx")]:
+    files_to_upload = [research_md.with_suffix(".xlsx"), strategy_md, draft_md.with_suffix(".docx")]
+    print(f"  Files to upload: {len(files_to_upload)}")
+    for f in files_to_upload:
+        print(f"    Uploading: {f.name} (exists: {f.exists()}, size: {f.stat().st_size if f.exists() else 0} bytes)")
         url = upload_to_drive(
             f,
             pipeline_folder if pipeline_folder not in ("", "YOUR_FOLDER_ID_HERE") else None,
             subfolder=week_folder,
         )
         if url:
+            print(f"      ✓ Uploaded: {url}")
             drive_links.append(url)
+        else:
+            print(f"      ✗ Upload failed or returned no URL")
 
     # Ready to Post folder — final only (inside weekly subfolder)
     if final_folder and final_folder not in ("YOUR_READY_TO_POST_FOLDER_ID_HERE", ""):
         print("\nReady to Post folder:")
         final_docx = final_md.with_suffix(".docx")
+        print(f"  Uploading: {final_docx.name} (exists: {final_docx.exists()}, size: {final_docx.stat().st_size if final_docx.exists() else 0} bytes)")
         url = upload_to_drive(final_docx, final_folder, subfolder=week_folder)
         if url:
+            print(f"    ✓ Uploaded: {url}")
             drive_links.append(url)
+        else:
+            print(f"    ✗ Upload failed or returned no URL")
     else:
         print("  Ready to Post folder not configured — skipping final upload")
 
+    print(f"\n  Total Drive links: {len(drive_links)}")
     return drive_links
 
 
